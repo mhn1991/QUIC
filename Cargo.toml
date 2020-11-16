@@ -1,0 +1,17 @@
+[package]
+name = "QUIC"
+version = "0.1.0"
+authors = ["mhn"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "quic"
+path = "src/lib/lib.rs"
+
+[[bin]]
+name = "quicBin"
+path = "src/bin/main.rs"
+
+[dependencies]
