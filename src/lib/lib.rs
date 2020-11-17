@@ -1,5 +1,4 @@
-pub mod types;
-use types::P;
+pub mod Stream;
 #[cfg(test)]
 mod tests {
     #[test]

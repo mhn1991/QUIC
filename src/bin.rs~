@@ -1,5 +1,0 @@
-extern crate quick;
-use quick;
-fn main(){
-    println!("hello world");
-}
