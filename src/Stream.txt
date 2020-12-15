@@ -20,3 +20,14 @@ sending & receiving
 # an endpoint uses the stream ID and offset fields in stream frames to place data in order
 # endpoints should be able to deliver stream data to an application as an ordered byte-stream
 # we should be able buffer data that is received out of order.(up to the flow control limit)
+# makes no specific allowances for delivery of stream data out of order.
+However, implementations MAY choose to offer the ability to deliver data out of order to a receiving application.
+# An endpoint could receive data for a stream at the same stream offset multiple times.(Data that has already been received can be discarded)
+# an endpoint MAY treat receipt of different data at the same offset within a stream as a connection error of type
+PROTOCOL_VIOLATION.
+
+candidate data structure could be:
+BTreeMap (key<stream id>, value <byte-stream>)
+==============================================================================================================
+Prioritization
+==============================================================================================================
