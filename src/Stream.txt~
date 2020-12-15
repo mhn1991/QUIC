@@ -1,0 +1,2 @@
+# stream ID is a 62-bit integer
+# A QUIC endpoint MUST NOT reuse a stream ID within a connection

@@ -1,0 +1,23 @@
+/// # Stream Id Types
+/// streams either bidirectional or unidirectional. Moreover, streams could be created by the server or client, therefore there will be four possibilities.
+/// page 12 draft IETF
+enum StreamIdTypes {
+    ServerBid,
+    ServerUni,
+    ClientBi,
+    ClientUni,
+}
+
+pub struct Stream {
+    pub id: u64,
+}
+
+impl Stream {
+    pub fn is_server_initiated(&self) -> bool {
+        if (self.id << 1 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+===========================================================================================================
+stream ID
+===========================================================================================================
+# stream ID is a 62-bit integer
+# A QUIC endpoint MUST NOT reuse a stream ID within a connection
+# The least significant bit of the stream ID identifies the initiator of the stream (server/ client)
+# server-initiated streams will be set to 0 or 1 for client
+# The second least significant bit of the stream ID distinguishes between bidirectional streams (bi/uni)
+# The stream ID for each type begins at the minimum value
+example:
+0x0 for bidirectional client initiated
+0x3 for unidirectional server initiated
+
+# A stream ID that is used out of order results in all streams of that type with lower-numbered
+stream IDs also being opened.(should read it again)
+=============================================================================================================
+sending & receiving
+=============================================================================================================
+# stream frames encapsulate data sent by an application
+# an endpoint uses the stream ID and offset fields in stream frames to place data in order
+# endpoints should be able to deliver stream data to an application as an ordered byte-stream
+# we should be able buffer data that is received out of order.(up to the flow control limit)
